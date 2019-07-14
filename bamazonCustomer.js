@@ -33,12 +33,15 @@ function start() {
         ]).then(function(answer) {
             var chosenItem
             for (var i = 0; i < results.length; i++) {
-                if (results[i] === answer.choice) {
+                if (results[i].product_name === answer.itemSelect) {
                     chosenItem = results[i]
                 }
             }
-            if (chosenItem.stock_quantity > 0) {
+            if (chosenItem.stock_quantity === 100) {
                 console.log("You're a genius!")
+            }
+            else {
+                console.log("Not so fast!")
             }
         })
     })
